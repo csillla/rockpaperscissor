@@ -13,5 +13,20 @@ function getComputerChoice() {
     }
 }
 
+let humanChoice;
+
+function getHumanChoice() {
+    humanChoice = prompt('Chose rock, paper or scissors!', 'rock');
+    if (humanChoice !== 'rock' && humanChoice !== 'paper' && humanChoice !== 'scissors') {
+        console.log('You typed something incorrect!');
+    }
+}
+
 getComputerChoice();
 console.log(computerChoice);
+
+getHumanChoice();
+console.log(humanChoice);
+
+let humanScore = 0;
+let computerScore = 0;
