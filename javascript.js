@@ -17,9 +17,6 @@ let humanChoice;
 
 function getHumanChoice() {
     humanChoice = prompt('Chose rock, paper or scissors!', 'rock');
-    if (humanChoice !== 'rock' && humanChoice !== 'paper' && humanChoice !== 'scissors') {
-        console.log('You typed something incorrect!');
-    }
 }
 
 getComputerChoice();
@@ -30,3 +27,28 @@ console.log(humanChoice);
 
 let humanScore = 0;
 let computerScore = 0;
+
+humanChoice = humanChoice.toLowerCase();
+console.log(humanChoice);
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie!");
+        humanScore ++;
+        computerScore ++;
+    } else if ((humanChoice === 'rock' && computerChoice === 'paper') ||
+    (humanChoice === 'paper' && computerChoice === 'scissors') ||
+    (humanChoice === 'scissors' && computerChoice === 'rock')) {
+        console.log('Oh no!');
+        computerScore ++;
+    }  else if ((computerChoice === 'rock' && humanChoice === 'paper') ||
+    (computerChoice === 'paper' && humanChoice === 'scissors') ||
+    (computerChoice === 'scissors' && humanChoice === 'rock')) {
+        console.log('Nice win!');
+        humanScore ++;
+    } else {
+        console.log('You typed something wrong, try again!')
+    }
+}
+
+playRound(humanChoice, computerChoice);
